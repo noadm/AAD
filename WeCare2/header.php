@@ -27,6 +27,10 @@
 						echo "<li><a href='clientpage.php'>Profile</a></li>";
 					    echo "<li><a href='includes/logout.inc.php'>Log out</a></li>";
 					}
+					else if (isset($_SESSION["GPID"] )) {
+						echo "<li><a href='GPpage.php'>Profile</a></li>";
+					    echo "<li><a href='includes/logout.inc.php'>Log out</a></li>";
+					}
 
 					else{
 						echo "<li><a href='signup.php'>Sign up</a></li>";

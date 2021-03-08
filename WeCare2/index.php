@@ -10,6 +10,12 @@ include_once 'header.php';
 		echo "<p> Hello " . $_SESSION["usersuserID"] . "</p>";
 					  
 		}
+
+	else if (isset($_SESSION["GPID"])) {
+		echo "<p> Hello " . $_SESSION["GPID"] . "</p>";
+					  
+		}
+
 ?>
 
 </section>
