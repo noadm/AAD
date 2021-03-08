@@ -19,5 +19,5 @@ if (isset($_POST["submit"])) {
 else {
 	header("location: ../GPlogin.php");
 	exit();
-
+}
 ?>

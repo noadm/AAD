@@ -26,9 +26,27 @@
 		while ($row = mysqli_fetch_assoc($result)) {
 			echo $row['usersname']. "<br>";
 			echo $row['usersuserID']."<br>";
-			echo $row['bloodworkresults']."<br>";
 		}
+
 	}
+	$sql = "SELECT * FROM medication WHERE usersID='3';";
+	$result = mysqli_query($conn, $sql);
+	$check = mysqli_num_rows($result);
+	if ($check > 0) {
+		while ($row = mysqli_fetch_assoc($result)) {
+			echo $row['name']. "<br>";
+			echo $row['dose']. "<br>";
+			echo $row['collect']. "<br>";
+		}
+
+	}
+
+	
+
+	
+		
+
+	
 ?>
 
 </body>
