@@ -16,16 +16,16 @@
 					  
 	}
 
-	$sql = "SELECT * FROM GP, users WHERE GPID = '{$_SESSION['GPID']}' OR users";
+	$sql = "SELECT * FROM users WHERE GPID = '{$_SESSION['GPID']}'";
 	$result = mysqli_query($conn, $sql);
 	$check = mysqli_num_rows($result);
 	if ($check > 0) {
 		while ($row = mysqli_fetch_assoc($result)) {
-			echo $row['GPname']. "<br>";
+			
 			echo "<p> Clients </p>";
 			echo $row['usersname']. "<br>";
 			echo $row['usersemail']. "<br>";
-			echo $row['bloodworkresults']. "<br>";
+			
 
 
 
