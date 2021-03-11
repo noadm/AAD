@@ -15,7 +15,7 @@
 	<body>
 
 		<nav>
-			<div class="wrapper">
+			<div class="topnav">
 				<a href="index.php"><img src="img/WeCare.png" alt="WeCare logo"></a>
 				<ul>
 					<div class="topnav">

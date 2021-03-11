@@ -19,7 +19,7 @@
 
 <?php
 
-	$sql = "SELECT usersuserID, usersname FROM users WHERE usersID = '".$_SESSION['usersuserID']."'";
+	$sql = "SELECT usersuserID, usersname FROM users WHERE usersuserID = '{$_SESSION['usersuserID']}'";
 	$result = mysqli_query($conn, $sql);
 	$check = mysqli_num_rows($result);
 	if ($check > 0) {
@@ -29,7 +29,11 @@
 		}
 
 	}
-	$sql = "SELECT * FROM medication WHERE usersID = '".$_SESSION['usersuserID']."'";
+
+
+
+
+	$sql = "SELECT * FROM medication WHERE usersuserID = '{$_SESSION['usersuserID']}'";
 	$result = mysqli_query($conn, $sql);
 	$check = mysqli_num_rows($result);
 	if ($check > 0) {
@@ -41,7 +45,8 @@
 
 	}
 
-
+    
+    else echo "<p> Somethings not right </p> "
 
 	
 		

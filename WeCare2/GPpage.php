@@ -12,17 +12,23 @@
 <section class="index-intro">
 <?php
 	if (isset($_SESSION["GPID"])) {
-		echo "<p> Hello " . $_SESSION["GPID"] . "</p>";
+		echo "<p> Hello Dr. " . $_SESSION["GPID"] . "</p>";
 					  
 	}
 
-	$sql = "SELECT * FROM GP WHERE GPID ='Ak';";
+	$sql = "SELECT * FROM GP, users WHERE GPID = '{$_SESSION['GPID']}' OR users";
 	$result = mysqli_query($conn, $sql);
 	$check = mysqli_num_rows($result);
 	if ($check > 0) {
 		while ($row = mysqli_fetch_assoc($result)) {
 			echo $row['GPname']. "<br>";
-			echo $row['GPID']."<br>";
+			echo "<p> Clients </p>";
+			echo $row['usersname']. "<br>";
+			echo $row['usersemail']. "<br>";
+			echo $row['bloodworkresults']. "<br>";
+
+
+
 		}
 
 	}
