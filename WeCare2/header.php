@@ -19,8 +19,8 @@
 				<a href="index.php"><img src="img/WeCare.png" alt="WeCare logo"></a>
 				<ul>
 					<div class="topnav">
-					<li><a href="#home" href="clientBloodWork.php">Home</a></li>
-					<li><a href="#AboutUs" href="aboutus.php">About us</a></li>
+					<li><a  href="index.php">Home</a></li>
+					<li><a  href="aboutus.php">About us</a></li>
 					<?php
 
 					if (isset($_SESSION["usersuserID"] )) {

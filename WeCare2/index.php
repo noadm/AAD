@@ -12,7 +12,7 @@ include_once 'header.php';
 		}
 
 	else if (isset($_SESSION["GPID"])) {
-		echo "<p> Hello " . $_SESSION["GPID"] . "</p>";
+		echo "<p> Hello Dr. " . $_SESSION["GPID"] . "</p>";
 					  
 		}
 
