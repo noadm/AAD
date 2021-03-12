@@ -15,19 +15,35 @@
 		echo "<p> Hello Dr. " . $_SESSION["GPID"] . "</p>";
 					  
 	}
-
+?>
+</section>
+<?php
 	$sql = "SELECT * FROM users WHERE GPID = '{$_SESSION['GPID']}'";
 	$result = mysqli_query($conn, $sql);
 	$check = mysqli_num_rows($result);
 	if ($check > 0) {
-		while ($row = mysqli_fetch_assoc($result)) {
-			
-			echo "<p> Clients </p>";
-			echo $row['usersname']. "<br>";
-			echo $row['usersemail']. "<br>";
-			
-
-
+		
+			?>
+			<div class="row justify-content-center">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Email</th>
+							<th colspan="2">Action</th>
+						</tr>
+					</thead>
+				<?php
+				while ($row = mysqli_fetch_assoc($result)) { 
+					?>
+					<tr>
+						<td><?php echo $row['usersname'];?></td>
+						<td><?php echo $row['usersemail'];?></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<?php
 
 		}
 
@@ -36,6 +52,5 @@
 	
 
 ?>
-</section>
 </body>
 </html>
