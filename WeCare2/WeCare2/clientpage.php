@@ -16,7 +16,22 @@ body{
 <html>
 <head>
 	<title></title>
-
+<style type="text/css">
+	table {
+		border-collapse: separate;
+		border-spacing: 40px;
+		width: 100%
+		color: #d96459;
+		font-family: monospace;
+		font-size: 20px;
+		text-align: justify-all;
+	}
+	th{
+		background-color: #588c7e;
+		color: white;
+	}
+	
+</style>
 </head>
 <body>
 <section class="index-intro">
@@ -39,49 +54,36 @@ body{
                     <div class="col-md-2">
                         <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
                     </div>
-                </div>
 
-
+                    <table>
+	<tr>
+		<th>Medicine</th>
+		<th>Dose</th>
+		<th>Collect on</th>
+	</tr>
 
 <?php
 	$sql = "SELECT * FROM medication WHERE usersuserID = '{$_SESSION['usersuserID']}'";
-	$result = mysqli_query($conn, $sql);
-	$check = mysqli_num_rows($result);
-	if ($check > 0) {
-		
+	$result = $conn -> query ($sql);
+		if ($result-> num_rows > 0) {
+		while ($row = $result -> fetch_assoc()) { 
+			echo "<tr><td>". $row["name"] ."</td><td>". $row["dose"] ."</td><td>". $row["collect"] ."</td></tr>";
+		}
+		echo "</table>";
+	}
+	else {
+		echo "no results";
+	}
+
+
+
 			?>
-			<div class="row justify-content-center">
-				<table class="table table-dark">
-					<thead>
-						<tr>
-							<th scope="col">Medicine</th>
-							<th scope="col">Dose</th>
-							<th scope="col">Collect on</th>
-						</tr>
-					</thead>
-
-				
-				<?php
-				while ($row = mysqli_fetch_assoc($result)) { 
-					?>
-					<tbody>
-					<tr>
-					<th scope="row"></th>
-						<td><?php echo $row['name'];?></td>
-						<td><?php echo $row['dose'];?></td>
-						<td><?php echo $row['collect'];?></td>
-						<td></td>
-					</tr>
-
-				</tbody>
-				</table>
 			</div>
-			<?php
+</table>
 
-    }
+                </div>
 
-}
-?>
+
 
 </body>
 </html>
